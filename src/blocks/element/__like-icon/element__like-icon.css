@@ -1,0 +1,6 @@
+.element__like-icon {
+  width: 21px;
+  height: 18px;
+  cursor: pointer;
+  background-image: url('../../../images/heart-icon.svg');
+}

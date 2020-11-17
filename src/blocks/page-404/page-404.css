@@ -1,0 +1,23 @@
+@import url('./__link/page-404__link.css');
+@import url('./__image/page-404__image.css');
+@import url('./__title/page-404__title.css');
+
+.page-404 {
+  max-width: 430px;
+  min-width: 240px;
+  min-height: 330px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  position: relative;
+  padding: 34px 36px 36px 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 36px;
+  margin: auto;
+  margin-top: 10%;
+}

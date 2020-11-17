@@ -1,0 +1,14 @@
+@import url('./__title/register__title.css');
+@import url('./__ask-login/register__ask-login.css');
+@import url('./__login-link/register__login-link.css');
+
+.register{
+    min-width: 360px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 112px 0;
+}
+

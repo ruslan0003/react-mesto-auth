@@ -1,0 +1,13 @@
+@import url('./__close-button/popup-image__close-button.css');
+@import url('./__close-icon/popup-image__close-icon.css');
+@import url('./__photo/popup-image__photo.css');
+@import url('./__title/popup-image__title.css');
+@import url('./__container/popup-image__container.css');
+
+.popup-image {
+  animation: start 0.4s linear;
+}
+
+@keyframes start {
+  from {opacity: 0;} to {opacity: 1;}
+}

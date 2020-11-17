@@ -1,0 +1,16 @@
+.page-404__link {
+  font-family: inherit;
+  color: lightslategrey;
+  font-size: 18px;
+  line-height: 22px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: opacity 0.2s linear;
+}
+
+.page-404__link:hover {
+  opacity: .6;
+}

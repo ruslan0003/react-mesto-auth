@@ -1,0 +1,16 @@
+.header__link {
+  font-family: inherit;
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  padding-left: 24px;
+  transition: opacity 0.2s linear;
+}
+
+.header__link:hover {
+  opacity: .6;
+}

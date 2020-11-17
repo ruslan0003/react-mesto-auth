@@ -1,0 +1,58 @@
+.form-auth__input {
+    outline: none;
+    padding: 5px 0 13px 0;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    max-width: 358px;
+    margin: 40px 0 0 0;
+    background-color: #000;
+    color: #ccc;
+  }
+  
+  .form-auth__input:first-child {
+    margin: 0;
+  }
+  
+  .form-auth__input::-webkit-input-placeholder {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+  }
+  
+  .form-auth__input::-moz-placeholder {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+  }
+  
+  .form-auth__input::-ms-input-placeholder {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+  }
+  
+  .form-auth__input::placeholder {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CCC;
+  }
+  
+  .form-auth__input:focus {
+    outline: 2px solid #ccc;
+    padding-left: 2px;
+  }

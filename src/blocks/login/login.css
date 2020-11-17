@@ -1,0 +1,11 @@
+@import url('./title/login__title.css');
+
+.login {
+    min-width: 360px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 112px 0;
+}

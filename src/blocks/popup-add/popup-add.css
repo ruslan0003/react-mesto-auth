@@ -1,0 +1,17 @@
+@import url(./__close-button/popup-add__close-button.css);
+@import url(./__close-icon/popup-add__close-icon.css);
+@import url(./__container/popup-add__container.css);
+@import url(./__title/popup-add__title.css);
+
+.popup-add {
+
+}
+
+@media screen and (max-width: 480px) {
+  .popup-add {
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+}
+
+
