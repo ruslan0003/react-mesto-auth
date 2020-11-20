@@ -15,8 +15,8 @@ import { ROUTES_MAP } from '../utils/routesMap.js';
 import Register from './Register.js';
 import ProtectedRoute from './ProtectedRoute.js';
 import Login from './Login.js';
-import * as userAuth from '../userAuth.js';
-import { getToken } from '../utils/token.js';
+import * as userAuth from '../utils/userAuth.js';
+import { getToken, removeToken, setToken } from '../utils/token.js';
 import InfoTooltip from './InfoTooltip.js';
 import Page404 from './Page404.js';
 
@@ -130,9 +130,11 @@ function App() {
       });
   }
 
-  function handleLogin(userData) {
+  function handleLogin(userData, userToken) {
     setUserData(userData);
     setLoggedIn(true);
+    setToken(userToken);
+    history.push(ROUTES_MAP.MAIN);
   }
 
   function tokenCheck() {
@@ -161,12 +163,24 @@ function App() {
     setRegistrationStatus(status);
   }
 
+  function handleRegistration(boolean, path) {
+    handleRegistrationStatus(boolean);
+    handleInfoTooltipOpen();
+    history.push(path);
+  }
+
+  function signOut() {
+    removeToken();
+    setLoggedIn(false);
+    history.push(ROUTES_MAP.LOGIN);
+  }
+
   return (
     <div className="page">
 
       <UserContext.Provider value={currentUser}>
 
-        <Header userData={userData} />
+        <Header userData={userData} onSignOut={signOut} />
 
         <Switch>
 
@@ -175,11 +189,11 @@ function App() {
           </ProtectedRoute>
 
           <Route path={ROUTES_MAP.LOGIN}>
-            <Login handleLogin={handleLogin}/>
+            <Login onLogin={handleLogin}/>
           </Route>
 
           <Route path={ROUTES_MAP.REGISTER}>
-            <Register handleInfoTooltipOpen={handleInfoTooltipOpen} handleRegistrationStatus={handleRegistrationStatus} />
+            <Register onRegister={handleRegistration} />
           </Route>
 
           <Route path={ROUTES_MAP.NOT_FOUND} exact>
@@ -192,7 +206,7 @@ function App() {
 
         <Footer />
 
-        <InfoTooltip isRegistrationValid={isRegistrationValid} isOpen={isInfoTooltipOpen} onClose={closeAllPopups} />
+        <InfoTooltip isRegistrationValid={isRegistrationValid} isOpen={isInfoTooltipOpen} onClose={closeAllPopups} onSuccess={'Вы успешно зарегистрировались!'} onFailure={'Что-то пошло не так! Попробуйте ещё раз.'} />
 
         <EditProfilePopup onClose={closeAllPopups} isOpen={isEditProfilePopupOpen} onUpdateUser={handleUpdateUser} />
 

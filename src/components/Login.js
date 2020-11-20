@@ -1,8 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import * as userAuth from '../userAuth.js';
-import { setToken } from '../utils/token.js';
-import { ROUTES_MAP } from '../utils/routesMap.js';
+import * as userAuth from '../utils/userAuth.js';
 
 function Login(props) {
   const [data, setData] = React.useState({
@@ -11,8 +8,6 @@ function Login(props) {
   });
 
   const [message, setMessage] = React.useState('');
-
-  const history = useHistory();
 
   function handleChange(e) {
     const {name, value} = e.target;
@@ -38,11 +33,9 @@ function Login(props) {
         }
 
         if (res.token) {
-          setToken(res.token);
           setData({ email: '', password: '' });
           setMessage('');
-          props.handleLogin(data);
-          history.push(ROUTES_MAP.MAIN);
+          props.onLogin(data, res.token);
         }
       })
       .catch(err => console.log(err));

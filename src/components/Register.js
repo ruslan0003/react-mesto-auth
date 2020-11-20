@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import * as userAuth from '../userAuth.js';
+import { Link } from 'react-router-dom';
+import * as userAuth from '../utils/userAuth.js';
 import { ROUTES_MAP } from '../utils/routesMap.js';
 
 function Register(props) {
@@ -10,8 +10,6 @@ function Register(props) {
   });
 
   const [message, setMessage] = React.useState('');
-
-  const history = useHistory();
 
   function handleChange(e) {
     const {name, value} = e.target;
@@ -26,13 +24,10 @@ function Register(props) {
     const { email, password} = data;
     userAuth.register(email, password).then((res) => {
       if (res) {
-        props.handleRegistrationStatus(true);
-        props.handleInfoTooltipOpen();
-        history.push(ROUTES_MAP.LOGIN);
+        props.onRegister(true, ROUTES_MAP.LOGIN);
       }
       else {
-        props.handleRegistrationStatus(false);
-        props.handleInfoTooltipOpen();
+        props.onRegister(false, ROUTES_MAP.REGISTER);
         setMessage('Некорректно заполнено одно из полей либо такой пользователь уже зарегистрирован!');
       }
     }).catch(err => console.log(err));

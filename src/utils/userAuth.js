@@ -1,4 +1,4 @@
-import { setToken } from './utils/token.js';
+import { setToken } from './token.js';
 
 export const BASE_URL = 'https://auth.nomoreparties.co';
 
@@ -23,8 +23,7 @@ export const register = (email, password) => {
     })
     .then((res) => {
       return res;
-    })
-    .catch((err) => console.log(err));
+    });
 };
 
 export const authorize = (email, password) => {
@@ -55,8 +54,7 @@ export const authorize = (email, password) => {
         setToken(data.jwt);
         return data;
       }
-    })
-    .catch(err => console.log(err))
+    });
 };
 
 export const getContent = (token) => {
